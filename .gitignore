@@ -33,6 +33,7 @@ node_modules
 /coverage
 /libpeerconnection.log
 npm-debug.log
+pnpm-install.log
 yarn-error.log
 testem.log
 /typings
@@ -47,3 +48,9 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# DeviceBridge Python runtime
+python_app/devicebridge.sqlite3
+python_app/*.log
+python_app/*.pid
+python_app/__pycache__/

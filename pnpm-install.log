@@ -1,0 +1,7 @@
+error: unexpected argument '--frozen-lockfile' found
+
+  tip: to pass '--frozen-lockfile' as a value, use '-- --frozen-lockfile'
+
+Usage: pnpm add [OPTIONS] <PACKAGE_NAMES>...
+
+For more information, try '--help'.

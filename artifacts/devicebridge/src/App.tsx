@@ -39,13 +39,16 @@ const dateLabel = (value?: string | null) => value ? new Date(value).toLocaleDat
 const errorText = (error: any, fallback: string) => error?.data?.error || error?.message || fallback;
 
 function Logo({ dark = false }: { dark?: boolean }) {
-  return <Link href="/" className="flex items-center gap-3 no-underline" data-testid="link-logo">
-    <span className={cx('relative grid h-10 w-10 place-items-center rounded-[14px] rotate-[-7deg]', dark ? 'bg-lime-300 text-forest' : 'bg-forest text-lime-200')}>
-      <Sprout size={22} strokeWidth={2.5} />
-      <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-coral" />
-    </span>
-    <span className={cx('font-serif text-xl font-bold tracking-[-.04em]', dark ? 'text-cream' : 'text-forest')}>devicebridge</span>
-  </Link>;
+  return <div className="flex items-center gap-3">
+    <Link href="/" className="flex items-center gap-3 no-underline" data-testid="link-logo">
+      <span className={cx('relative grid h-10 w-10 place-items-center rounded-[14px] rotate-[-7deg]', dark ? 'bg-lime-300 text-forest' : 'bg-forest text-lime-200')}>
+        <Sprout size={22} strokeWidth={2.5} />
+        <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-coral" />
+      </span>
+      <span className={cx('font-serif text-xl font-bold tracking-[-.04em]', dark ? 'text-cream' : 'text-forest')}>devicebridge</span>
+    </Link>
+    <span className={cx('hidden rounded-full px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[.12em] sm:inline', dark ? 'bg-cream/10 text-lime-300' : 'bg-lime-100 text-lime-800')}>Python fit</span>
+  </div>;
 }
 
 function Leaves({ dark = false }: { dark?: boolean }) {
