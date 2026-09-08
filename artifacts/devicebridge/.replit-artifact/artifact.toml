@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "DeviceBridge"
+description = "A full-stack digital access platform connecting people who need devices with providers offering donations, loans, and affordable sales, with role-based dashboards and database-backed workflows."
+version = "1.0.0"
+id = "artifacts/devicebridge"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22136
+
+[services.development]
+run = "pnpm --filter @workspace/devicebridge run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/devicebridge", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/devicebridge/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22136"
+BASE_PATH = "/"
